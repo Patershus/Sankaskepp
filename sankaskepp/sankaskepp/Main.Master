@@ -7,13 +7,38 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="MySheet.css" rel="stylesheet" />
+    <script src="MyScript.js"></script>
+
 </head>
 <body>
+    <div id="wrapper">
     <form id="form1" runat="server">
+        
         <div>
+
+    <header>
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1>Battle ships!</h1>
+    </header>
+
+
+
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+
+
+
+
         </div>
     </form>
+    </div>
 </body>
 </html>

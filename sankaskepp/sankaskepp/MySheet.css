@@ -1,0 +1,21 @@
+﻿#wrapper{
+    width:80%;
+    margin-right:auto;
+    margin-left:auto;
+
+    background-color:whitesmoke;
+
+
+}
+
+.gameButton{
+    height:20px;
+    width:20px;
+    margin:3px;
+}
+
+#gameBoardWrapper {
+width:20%;
+margin-right: auto;
+    margin-left: auto;
+}
