@@ -18,6 +18,22 @@ namespace sankaskepp
         protected void ButtonEasy_Click(object sender, EventArgs e)
         {
             Session["difficulty"] = 1;
+            Server.Transfer($"Game.aspx");
+
+        }
+
+        protected void ButtonMedium_Click(object sender, EventArgs e)
+        {
+            Session["difficulty"] = 2;
+            Server.Transfer($"Game.aspx");
+
+        }
+
+        protected void ButtonHard_Click(object sender, EventArgs e)
+        {
+            Session["difficulty"] = 3;
+            Server.Transfer($"Game.aspx");
+
         }
     }
 }

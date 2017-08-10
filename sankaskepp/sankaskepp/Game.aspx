@@ -22,7 +22,7 @@
     <div id="gameBoardWrapper">
     <asp:Literal ID="gameBoardLiteral" runat="server"></asp:Literal>
 
-        <table style="width: 100%;">
+        <%--<table style="width: 100%;">
             <tr>
                 <td>
                     <asp:Label ID="ShotLabel" runat="server" Text="Shots"></asp:Label>
@@ -42,7 +42,7 @@
                 </td>
                
             </tr>
-        </table>
+        </table>--%>
 
         </div>
 </asp:Content>

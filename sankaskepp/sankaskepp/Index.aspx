@@ -19,10 +19,10 @@
     <div id="buttonWrapper">
         <asp:Button ID="ButtonEasy" runat="server" Text="Noob" CssClass="btn-success difficultyButton" OnClick="ButtonEasy_Click" />
         <br />
-        <asp:Button ID="ButtonMedium" runat="server" Text="Intermediate" CssClass="btn-warning difficultyButton" />
+        <asp:Button ID="ButtonMedium" runat="server" Text="Intermediate" CssClass="btn-warning difficultyButton" OnClick="ButtonMedium_Click" />
         <br />
 
-        <asp:Button ID="ButtonHard" runat="server" Text="Showoff" CssClass="btn-danger difficultyButton" />
+        <asp:Button ID="ButtonHard" runat="server" Text="Showoff" CssClass="btn-danger difficultyButton" OnClick="ButtonHard_Click" />
         <br />
     </div>
 

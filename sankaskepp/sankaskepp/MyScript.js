@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-    var boatsLeft = ($('.gameButtonShip').length);
+    var boatsLeft = $('.gameButtonShip').length;
     
     
     
@@ -48,7 +48,8 @@
 
         var fullHTMLPage = $('#gameBoardWrapper')[0].outerHTML;
 
-        $.post("game.aspx", { action: 'save', savedString: fullHTMLPage }).done(function () {
+        var encodedPage = escape(fullHTMLPage);
+        $.post("game.aspx", { action: 'save', savedString: encodedPage }).done(function () {
             alert('saved'); 
         });
        // window.location.href = "game.aspx?action=save&savedString=" + fullHTMLPage;

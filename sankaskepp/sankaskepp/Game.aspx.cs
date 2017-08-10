@@ -23,22 +23,48 @@ namespace sankaskepp
             if (Request["savedString"] != null)
             {
                 savedString = Request["savedString"];
+
+            }
+
+            string decodedString= System.Uri.UnescapeDataString(savedString);
+            //gameBoardLiteral.Text = decodedString;
+
+            if (action=="save")
+            {
+                SQLConnection.SaveGame(savedString);
+
+
+
+            }
+           
+            int saveIdInt=0;
+            if (Request["saveId"]!=null)
+            {
+                saveIdInt = Convert.ToInt32(Request["saveId"]);          
             }
 
 
-            int levelOfDifficulty = 0;
-            Session["difficulty"] = 1; //todo ta bort denna för att kunna välja level
-
-            if (Session["difficulty"] != null)
+            if (action == "load" && saveIdInt != 0)
             {
-                levelOfDifficulty = Convert.ToInt32(Session["difficulty"].ToString());
-                gameBoardLiteral.Text = GenerateGamefield(levelOfDifficulty);
+                gameBoardLiteral.Text = SQLConnection.GetSaveString(saveIdInt);
             }
             else
             {
-                gameBoardLiteral.Text = "Something broke";
-            }
+                int levelOfDifficulty = 0;
+                Session["difficulty"] = 1; //todo ta bort denna för att kunna välja level
 
+                if (Session["difficulty"] != null)
+                {
+                    levelOfDifficulty = Convert.ToInt32(Session["difficulty"].ToString());
+                    gameBoardLiteral.Text = GenerateGamefield(levelOfDifficulty);
+                    //gameBoardLiteral.Text = decodedString;
+                }
+                else
+                {
+                    gameBoardLiteral.Text = "Something broke";
+                }
+
+            }
 
         }
 
@@ -74,7 +100,37 @@ namespace sankaskepp
 
             gameBoardLiteralString += "</table>";
 
+            gameBoardLiteralString += "  <table style='width:100%'><tr><td><asp:Label ID='ShotLabel' runat='server' Text='Shots'></asp:Label >";
+            gameBoardLiteralString += "</td><td><asp:Label ID = 'ShotCounter' runat = 'server' Text = '0'></asp:Label>";
+            gameBoardLiteralString += "</td></tr><tr><td><asp:Label ID = 'ScoreLabel' runat = 'server' Text = 'Score'></asp:Label>";
+            gameBoardLiteralString += "</td><td><asp:Label ID = 'ScoreCounterLabel' runat = 'server' Text ='0'></asp:Label>";
+            gameBoardLiteralString +="</td></tr></table>";
+
             return gameBoardLiteralString;
         }
+
+        //Todo
+        private string GenerateNoobGameFeild()
+        {
+
+
+            return "";
+        }
+        //Todo
+        private string GenerateIntermediateGameFeild()
+        {
+
+
+            return "";
+        }
+
+        //Todo
+        private string GenerateProGameFeild()
+        {
+
+
+            return "";
+        }
+
     }
 }
