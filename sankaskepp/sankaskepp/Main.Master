@@ -30,7 +30,7 @@
                             <ul class="nav navbar-nav">
                                 <li><a href="index.aspx">New game</a></li>
                                 <li><a href="#">Load game</a></li>
-                                <li><a href="#">Save game</a></li>
+                                <li ><input type="button" id="saveButton" /></li>
                                 <li><a href="#">Highscore</a></li>
                             </ul>
                         </div>

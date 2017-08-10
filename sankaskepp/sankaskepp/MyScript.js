@@ -38,9 +38,19 @@
         //    alert("Win!");
         //}
 
-        var fullHTMLPage = $('#gameBoardWrapper')[0].outerHTML;
-        console.log(fullHTMLPage);
+        //var fullHTMLPage = $('#gameBoardWrapper')[0].outerHTML;
+        
 
         $(this).prop('disabled', 'true');
+    });
+
+    $('#saveButton').on('click', function () {
+
+        var fullHTMLPage = $('#gameBoardWrapper')[0].outerHTML;
+
+        $.post("game.aspx", { action: 'save', savedString: fullHTMLPage }).done(function () {
+            alert('saved'); 
+        });
+       // window.location.href = "game.aspx?action=save&savedString=" + fullHTMLPage;
     });
 });

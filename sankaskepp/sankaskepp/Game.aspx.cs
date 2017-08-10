@@ -13,6 +13,19 @@ namespace sankaskepp
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string action = "";
+            string savedString = "";
+            if (Request["action"]!=null)
+            {
+                action = Request["action"];
+            }
+
+            if (Request["savedString"] != null)
+            {
+                savedString = Request["savedString"];
+            }
+
+
             int levelOfDifficulty = 0;
             Session["difficulty"] = 1; //todo ta bort denna för att kunna välja level
 
