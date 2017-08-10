@@ -17,28 +17,32 @@
 </head>
 <body>
     <div id="wrapper">
-    <form id="form1" runat="server">
-        
-        <div>
+        <form id="form1" runat="server">
 
-    <header>
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1>Battle ships!</h1>
-    </header>
+            <div>
 
+                <header>
+                    <nav class="navbar navbar-inverse">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <a class="navbar-brand">Battle ships</a>
+                            </div>
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.aspx">New game</a></li>
+                                <li><a href="#">Load game</a></li>
+                                <li><a href="#">Save game</a></li>
+                                <li><a href="#">Highscore</a></li>
+                            </ul>
+                        </div>
+                    </nav>
 
+                </header>
 
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
 
-
-
-
-        </div>
-    </form>
+            </div>
+        </form>
     </div>
 </body>
 </html>

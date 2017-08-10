@@ -12,9 +12,18 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1 style="text-align:center">
+        How good are you?
+    </h1>
 
-    <h1>easy</h1>
-    <h1>medium</h1>
-    <h1>hard</h1>
+    <div id="buttonWrapper">
+        <asp:Button ID="ButtonEasy" runat="server" Text="Noob" CssClass="btn-success difficultyButton" OnClick="ButtonEasy_Click" />
+        <br />
+        <asp:Button ID="ButtonMedium" runat="server" Text="Intermediate" CssClass="btn-warning difficultyButton" />
+        <br />
+
+        <asp:Button ID="ButtonHard" runat="server" Text="Showoff" CssClass="btn-danger difficultyButton" />
+        <br />
+    </div>
 
 </asp:Content>
