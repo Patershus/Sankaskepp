@@ -13,6 +13,24 @@ namespace sankaskepp
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            int levelOfDifficulty = 0;
+            Session["difficulty"] = 1; //todo ta bort denna för att kunna välja level
+
+            if (Session["difficulty"] != null)
+            {
+                levelOfDifficulty = Convert.ToInt32(Session["difficulty"].ToString());
+                gameBoardLiteral.Text = GenerateGamefield(levelOfDifficulty);
+            }
+            else
+            {
+                gameBoardLiteral.Text = "Something broke";
+            }
+
+
+        }
+
+        private string GenerateGamefield(int levelOfDifficulty)
+        {
             int size = 15;
             int row = rng.Next(0, size);
             int col = rng.Next(0, size);
@@ -43,9 +61,7 @@ namespace sankaskepp
 
             gameBoardLiteralString += "</table>";
 
-            gameBoardLiteral.Text = gameBoardLiteralString;
-
-
+            return gameBoardLiteralString;
         }
     }
 }

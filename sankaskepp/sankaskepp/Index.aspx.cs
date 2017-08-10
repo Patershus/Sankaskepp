@@ -19,7 +19,7 @@ namespace sankaskepp
 
         protected void ButtonEasy_Click(object sender, EventArgs e)
         {
-
+            Session["difficulty"] = 1;
         }
     }
 }
