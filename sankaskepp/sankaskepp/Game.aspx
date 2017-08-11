@@ -20,7 +20,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="gameBoardWrapper">
-    <asp:Literal ID="gameBoardLiteral" runat="server"></asp:Literal>
+        <center>
+    <asp:Literal ID="gameBoardLiteral" runat="server" ></asp:Literal>
 
         <%--<table style="width: 100%;">
             <tr>
@@ -43,6 +44,6 @@
                
             </tr>
         </table>--%>
-
+        </center>
         </div>
 </asp:Content>

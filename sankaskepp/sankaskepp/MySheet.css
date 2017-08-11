@@ -8,24 +8,29 @@
 
 }
 
-.gameButton{
-    height:20px;
-    width:20px;
-    margin:3px;
-    background-color:lightblue;
+.gameButton {
+    height: 20px;
+    width: 20px;
+    margin: 3px;
+    /*background-color:#284032;*/
+    background-color: lightblue;
+    /*border-color:#284032;*/ /*for optical illusion*/
 }
 
 #gameBoardWrapper {
-width:20%;
-margin-right: auto;
+    width: 100%;
+    margin-right: auto;
     margin-left: auto;
+    /*align-content:center;*/
+    /*background-image: url("https://68.media.tumblr.com/0499d65ee5abd002933fc504b41dbe7d/tumblr_opgkwq8rBY1w1cse8o1_250.gif");
+    background-repeat: repeat-x repeat-y;*/
 }
 
 .gameButtonShip {
     height: 20px;
     width: 20px;
     margin: 3px;
-    background-color:aqua;
+    background-color: lightblue;
 }
 
 #buttonWrapper {
@@ -53,4 +58,17 @@ margin-right: auto;
     color:#fff;
     
 
+}
+
+.gameButtonShip:disabled {
+    background-image: url("http://pre15.deviantart.net/0646/th/pre/f/2008/189/4/c/fire_pattern_two_by_empty_phantom_stock.jpg");
+    background-size: /*50px 50px*/ 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.gameButtonShip:enabled {
+    height: 20px;
+    width: 20px;
+    margin: 3px;
+    background-color: lightblue;
 }

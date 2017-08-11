@@ -92,7 +92,7 @@ namespace sankaskepp
         //Todo
         private string GenerateNoobGameFeild()
         {
-            int size = 15;
+            int size = 11;
             int row = rng.Next(0, size);
             int col = rng.Next(0, size);
 
@@ -135,14 +135,20 @@ namespace sankaskepp
         //Todo
         private string GenerateIntermediateGameFeild()
         {
-            int size = 20;
+            int size = 15;
+            int [,] shipArray = new int[size , size];
 
             //Skepp 2 rutor
 
             int shipRowStart = rng.Next(1, size - 1);
             int shipColStart = rng.Next(1, size - 1);
+
+
+
             int shipRowSecond;
             int shipColSecond;
+
+
 
             if (rng.Next(0,2)==1)
             {
@@ -171,6 +177,8 @@ namespace sankaskepp
                 }
             }
 
+            shipArray[shipRowStart, shipColStart] = 1;
+            shipArray[shipRowSecond, shipColSecond] = 1;
 
             //Ubåtar
             int row;
@@ -185,8 +193,9 @@ namespace sankaskepp
                 row2 = rng.Next(0, size); // todo kan bli samma, fixa sen
                 col2 = rng.Next(0, size);
             } while (false);
-            
 
+            shipArray[row, col] = 1;
+            shipArray[row2, col2] = 1;
 
 
             string gameBoardLiteralString = "";
@@ -198,19 +207,19 @@ namespace sankaskepp
 
                 for (int j = 0; j < size; j++)
                 {
-                    if ((j == col && row == i) || (j == col2 && i == row2))
+                    if (/*(j == col && row == i) || (j == col2 && i == row2)*/ shipArray[i,j] == 1)
                     {
                         gameBoardLiteralString += "<td><input type='button' class='gameButtonShip'/></td>";
                         continue;
                     }
-                    else if (j==shipColStart && i==shipRowStart || j==shipColStart&& i==shipRowSecond || j==shipColSecond&&i==shipRowStart||j==shipColSecond&&i==shipRowSecond)
-                    {
-                        gameBoardLiteralString += "<td><input type='button' class='gameButtonShip'/></td>";
-                        continue;
-                    }
+                    //else if (j==shipColStart && i==shipRowStart || j==shipColStart&& i==shipRowSecond || j==shipColSecond&&i==shipRowStart||j==shipColSecond&&i==shipRowSecond)
+                    //{
+                    //    gameBoardLiteralString += "<td><input type='button' class='gameButtonShip'/></td>";
+                    //    continue;
+                    //}
                     
                     else
-                    gameBoardLiteralString += "<td><input type='button' class='gameButton'/></td>";
+                        gameBoardLiteralString += "<td><input type='button' class='gameButton'/></td>";
 
                 }
                 gameBoardLiteralString += "</tr>";
@@ -234,7 +243,8 @@ namespace sankaskepp
         private string GenerateProGameFeild()
         {
 
-            int size = 30;
+            int size = 20;
+            int[,] shipArray = new int[size, size];
             //Hangaren
             int hangarRowStart = rng.Next(2, size - 2);
             int hangarColStart = rng.Next(2, size - 2);
@@ -313,7 +323,6 @@ namespace sankaskepp
                 }
             }
 
-
             //Ubåtar
             int row;
             int col;
@@ -328,8 +337,15 @@ namespace sankaskepp
                 col2 = rng.Next(0, size);
             } while (false);
 
+            shipArray[row, col] = 1; // ubåtar
+            shipArray[row2, col2] = 1;
 
+            shipArray[shipRowStart, shipColStart] = 1; //skepp
+            shipArray[shipRowSecond, shipColSecond] = 1;
 
+            shipArray[hangarRowStart, hangarColStart] = 1;
+            shipArray[hangarRowSecond, hangarColSecond] = 1;
+            shipArray[hangarRowThird, hangarColThird] = 1;
 
             string gameBoardLiteralString = "";
 
@@ -340,16 +356,16 @@ namespace sankaskepp
 
                 for (int j = 0; j < size; j++)
                 {
-                    if ((j == col && row == i) || (j == col2 && i == row2))
+                    if (/*(j == col && row == i) || (j == col2 && i == row2)*/ shipArray[i, j] == 1)
                     {
                         gameBoardLiteralString += "<td><input type='button' class='gameButtonShip'/></td>";
                         continue;
                     }
-                    else if (j == shipColStart && i == shipRowStart || j == shipColStart && i == shipRowSecond || j == shipColSecond && i == shipRowStart || j == shipColSecond && i == shipRowSecond)
-                    {
-                        gameBoardLiteralString += "<td><input type='button' class='gameButtonShip'/></td>";
-                        continue;
-                    }
+                    //else if (j == shipColStart && i == shipRowStart || j == shipColStart && i == shipRowSecond || j == shipColSecond && i == shipRowStart || j == shipColSecond && i == shipRowSecond)
+                    //{
+                    //    gameBoardLiteralString += "<td><input type='button' class='gameButtonShip'/></td>";
+                    //    continue;
+                    //}
 
                     else
                         gameBoardLiteralString += "<td><input type='button' class='gameButton'/></td>";
