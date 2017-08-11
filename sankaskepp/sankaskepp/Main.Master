@@ -42,7 +42,19 @@
                 </asp:ContentPlaceHolder>
 
 
-                <%--<table style='width:100%'>                    <tr>                        <td>                            <asp:Label ID='ShotLabel' runat='server' Text='Shots'></asp:Label ></td><td><asp:Label ID = 'ShotCounter' runat = 'server' Text = '0'></asp:Label></td></tr><tr><td><asp:Label ID = 'ScoreLabel' runat = 'server' Text = 'Score'></asp:Label></td><td><asp:Label ID = 'ScoreCounterLabel' runat = 'server' Text ='0'></asp:Label></td></tr></table>--%>
+<<<<<<< HEAD
+                <table style='width:100%'>
+                    <tr>
+                        <td>
+                            <asp:Label ID='ShotLabel' runat='server' Text='Shots'></asp:Label ></td><td><asp:Label ID = 'ShotCounter' runat = 'server' Text = '0'></asp:Label></td></tr><tr><td><asp:Label ID = 'ScoreLabel' runat = 'server' Text = 'Score'></asp:Label></td><td><asp:Label ID = 'ScoreCounterLabel' runat = 'server' Text ='0'></asp:Label></td></tr></table>
+
+=======
+                <%--<table style='width:100%'>
+                    <tr>
+                        <td>
+                            <asp:Label ID='ShotLabel' runat='server' Text='Shots'></asp:Label ></td><td><asp:Label ID = 'ShotCounter' runat = 'server' Text = '0'></asp:Label></td></tr><tr><td><asp:Label ID = 'ScoreLabel' runat = 'server' Text = 'Score'></asp:Label></td><td><asp:Label ID = 'ScoreCounterLabel' runat = 'server' Text ='0'></asp:Label></td></tr></table>--%>
+
+>>>>>>> 21de25d6629887278fb63253d997202346d45c0d
             </div>
         </form>
     </div>
