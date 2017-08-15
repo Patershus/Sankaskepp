@@ -1,0 +1,60 @@
+
+//GetSaveByID
+USE [battleships]
+GO
+/****** Object:  StoredProcedure [dbo].[GetSaveById]    Script Date: 2017-08-15 08:49:10 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[GetSaveById]
+@ID int
+
+
+
+AS
+BEGIN
+	
+	select savedString as HTML from savedgame where ID=@ID
+ 
+
+END
+
+
+//Get all saved games
+USE [battleships]
+GO
+/****** Object:  StoredProcedure [dbo].[GetSavedGames]    Script Date: 2017-08-15 08:49:40 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[GetSavedGames] 
+
+
+AS
+BEGIN
+	
+select* from savedgame
+END
+
+//Save game
+USE [battleships]
+GO
+/****** Object:  StoredProcedure [dbo].[SaveGame]    Script Date: 2017-08-15 08:50:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[SaveGame]
+@savedString varchar(max),
+@DateString varchar(max)
+
+
+AS
+BEGIN
+	insert into savedgame (savedString,datesaved)
+	values(@savedString, @DateString)
+
+
+END
